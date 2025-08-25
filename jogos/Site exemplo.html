@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Site do Guiih</title>
+  <meta name="description" content="Um exemplo de página HTML avançada com acessibilidade, CSS Grid, animações e JS." />
+
+  <!-- Favicon opcional -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <style>
+    :root {
+      --bg: #0b1020;
+      --surface: #141a2b;
+      --text: #e9e8f1;
+      --muted: #a6a3b8;
+      --primary: #7aa2ff;
+      --card: rgba(255, 255, 255, 0.04);
+      --radius: 14px;
+      --shadow: 0 10px 25px rgba(0,0,0,.25);
+      --grid-gap: 1.25rem;
+    }
+
+    [data-theme="light"] {
+      --bg: #f6f7fb;
+      --surface: #ffffff;
+      --text: #1b1b1f;
+      --muted: #5e5e6b;
+      --primary: #3b82f6;
+      --card: rgba(0,0,0,0.04);
+      --shadow: 0 6px 18px rgba(0,0,0,.08);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background: radial-gradient( circle at 20% -10%, rgba(122,162,255,.15), transparent 40% ),
+                  radial-gradient( circle at 90% 10%, rgba(255, 227, 150,.12), transparent 40% ),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: color-m-mix(in oklab, var(--surface), transparent 40%);
+      backdrop-filter: saturate(1.2) blur(6px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand-logo {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary), #5bd3ff);
+      display: inline-block;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      padding: 0; margin: 0;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    nav a[aria-current="page"] {
+      background: color-mix(in oklab, var(--primary), transparent 70%);
+    }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.2);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    main {
+      padding: 48px 0;
+    }
+
+    /* Layout com CSS Grid: 3 colunas no desktop, 2 em tablet, 1 em mobile */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--grid-gap);
+    }
+
+    @media (max-width: 1024px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.08);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card h3 { margin: 0 0 6px; font-size: 1.1rem; }
+    .card p { color: var(--muted); margin: 0; }
+
+    /* Animações */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInUp .6s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Formulário simples com validação */
+    form {
+      display: grid; gap: 12px;
+    }
+
+    label { font-size: 0.9rem; color: var(--muted); }
+
+    input, textarea {
+      width: 100%; padding: 12px 14px;
+      border-radius: 8px; border: 1px solid rgba(0,0,0,.15);
+      background: rgba(255,255,255,.85);
+    }
+
+    [data-error] {
+      border-color: #e33;
+      box-shadow: 0 0 0 4px rgba(227,51,51,.15);
+    }
+
+    .btn {
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: none;
+      background: var(--primary);
+      color: white;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 48px;
+      padding: 24px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header aria-label="Cabeçalho principal">
+    <div class="container topbar">
+      <a href="#" class="brand" aria-label="Logo e nome do site">
+        <span class="brand-logo" aria-hidden="true"></span>
+        <span style="font-weight:700;">Site do Guiih</span>
+      </a>
+
+      <nav aria-label="Navegação principal">
+        <ul role="list">
+          <li><a href="#sec-cards" aria-current="page">Início</a></li>
+          <li><a href="#sec-form">Contato</a></li>
+          <li><a href="#sec-info">Info</a></li>
+        </ul>
+      </nav>
+
+      <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+        🌗 Tema
+      </button>
+    </div>
+  </header>
+
+  <main class="container" id="sec-inicio" aria-labelledby="titulo-principal">
+    <section id="sec-cards" class="grid" aria-label="Cartões de conteúdo">
+      <article class="card fade-in" style="animation-delay:.05s;">
+        <h3>Minha vida</h3>
+        <p>Tudo oque você precisa saber sobre a vida do Guilherme.</p>
+      </article>
+
+      <article class="card fade-in" style="animation-delay:.15s;">
+        <h3>Hoobs</h3>
+        <p>Academia, musica, sair com os amigos, tomar sorvete...</p>
+      </article>
+
+      <article class="card fade-in" style="animation-delay:.25s;">
+        <h3>Contato</h3>
+        <p>Email, telefone, redes sociais.</p>
+      </article>
+    </section>
+
+    <section id="sec-info" class="grid" aria-label="Seção de informações" style="margin-top: 28px;">
+      <article class="card fade-in" style="animation-delay:.35s;">
+        <h3>Descrição</h3>
+        <p>layout, codigos usados, onde encontrar.</p>
+      </article>
+
+      <article class="card fade-in" style="animation-delay:.45s;">
+        <h3>Animções</h3>
+        <p>Transições suaves para uma experiência mais agradável.</p>
+      </article>
+
+      <article class="card fade-in" style="animation-delay:.55s;">
+        <h3>Validação</h3>
+        <p>Validação básica no front-end com feedback visual.</p>
+      </article>
+    </section>
+
+    <section id="sec-form" class="grid" aria-label="Formulário de contato" style="margin-top: 28px;">
+      <article class="card fade-in" style="grid-column: span 2;">
+        <h3>Formulário de Contato</h3>
+        <p>Validação simples de campos obrigatórios e feedback.</p>
+
+        <form id="contactForm" novalidate>
+          <div>
+            <label for="name">Nome completo *</label>
+            <input type="text" id="name" name="name" required placeholder="Digite seu nome" aria-required="true" />
+          </div>
+
+          <div>
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="seu@exemplo.com" aria-required="true" />
+          </div>
+
+          <div>
+            <label for="message">Mensagem *</label>
+            <textarea id="message" name="message" rows="4" required placeholder="Digite sua mensagem"></textarea>
+          </div>
+
+          <button type="submit" class="btn">Enviar mensagem</button>
+          <p id="formStatus" aria-live="polite" style="margin:0; color:var(--muted);"></p>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <footer role="contentinfo" aria-label="Rodapé">
+    © 2025 - Exemplo avançado de HTML com CSS Guiih produções
+  </footer>
+
+  <script>
+    // Tema claro/escuro
+    (function() {
+      const root = document.documentElement;
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const saved = localStorage.getItem('theme');
+      const theme = saved || (prefersDark ? 'dark' : 'dark');
+      document.body.setAttribute('data-theme', theme);
+      // Atualiza botão (texto simples)
+      const btn = document.getElementById('themeToggle');
+      btn.addEventListener('click', () => {
+        const current = document.body.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.body.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+      });
+    })();
+
+    // Validação simples de formulário
+    (function() {
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // remove erros
+        Array.from(form.querySelectorAll('[required]')).forEach(el => el.removeAttribute('data-error'));
+        let valid = true;
+        // checagem básica
+        const name = form.querySelector('#name');
+        const email = form.querySelector('#email');
+        const message = form.querySelector('#message');
+        if (!name.value.trim()) {
+          name.setAttribute('data-error', 'true');
+          valid = false;
+        }
+        if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+          email.setAttribute('data-error', 'true');
+          valid = false;
+        }
+        if (!message.value.trim()) {
+          message.setAttribute('data-error', 'true');
+          valid = false;
+        }
+        if (valid) {
+          // simula envio
+          status.style.color = 'var(--muted)';
+          status.textContent = 'Enviando...';
+          setTimeout(() => {
+            status.style.color = 'var(--text)';
+            status.textContent = 'Obrigado! Sua mensagem foi enviada (simulado).';
+            form.reset();
+          }, 800);
+        } else {
+          status.style.color = '#e33';
+          status.textContent = 'Por favor, preencha os campos obrigatórios corretamente.';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplos_formulario</title>
+</head>
+<body>
+<h1>Formulário</h1>
+<form>
+    <label for="input_nome">Nome:</label><br>
+    <input id="input_nome" type="text" placeholder="Digite aqui" required><br>
+    <label for="input_e-mail">E-mail:</label><br>
+    <input id="input_e-mail" type="email" placeholder="gui@gmail.com" required>
+    <br>
+    <label for="input_senha">Senha:</label><br>
+    <input id="input_senha" type="password" required>
+    <br>
+    <label for="Text_descricao">Descrição</label><br>
+    <textarea id="Text_descricao" cols="50" rows="10"></textarea>
+    <br><br>
+    <label><strong>Gênero</strong></label><br>
+    <input id="radio_m" type="radio" value="Masculino" name="Gênero" required>
+    <label for="radio_m">Masculino</label>
+    <input id="radio_f" type="radio" value="Feminino" name="Gênero" required>
+    <label for="radio_f">Feminino</label>
+    <br><br>
+    <button type="submit">Salvar</button>
+    <br><br>
+    <button type="reset">Limpar</button>
+    <br>
+    <label for="menu_cidade">Cidade</label><br>
+
+    <select id="menu_cidade">
+        <optgroup label="Interior">
+            <option>Guararapes</option>
+            <option>Araçatuba</option>
+            <option>Birigui</option>
+        </optgroup>
+        <optgroup label="Capitais">
+            <option>São Paulo</option>
+            <option>Rio de Janeiro</option>
+            <option>Brasília</option>
+        </optgroup>
+    </select>
+</form>
+</body>
+</html>
