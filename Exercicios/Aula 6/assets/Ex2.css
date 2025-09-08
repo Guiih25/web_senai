@@ -1,0 +1,53 @@
+.Tela {
+    background-color: yellow;
+}
+
+.Titulo {
+    font-size: 70px;
+    text-align: center;
+}
+
+.lista {
+
+    background-color: white;
+}
+
+.Verde {
+    font-size: 36px;
+    color: green;
+    background-color: gray;
+}
+
+.Vermelho {
+     font-size: 36px;
+    color: red;
+    background-color: gray;
+    text-align: center;
+}
+
+.Azul {
+     font-size: 36px;
+    color: blue;
+    background-color: gray;
+    text-align: end;
+}
+
+.Roxo {
+     font-size: 36px;
+    color: purple;
+    background-color: gray;
+    text-align: center;
+}
+
+.Amarelo {
+     font-size: 36px;
+    color: yellow;
+    background-color: gray;
+}
+
+.Rosa {
+     font-size: 36px;
+    color: pink;
+    background-color: gray;
+    text-align: center;
+}

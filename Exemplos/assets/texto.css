@@ -1,0 +1,20 @@
+p{
+    color: red;
+}
+.Text_black{
+    color: red;
+    background-color: black;
+    display: inline;
+}
+#Text-maior{
+    font-size: 32px;
+    font-family: "Comic Sans MS";
+    display: inline;
+}
+#Text-maior:hover{
+    color: blue;
+
+    font-size: 20px;
+    font-family: "Arial Black";
+    background-color: black;
+}
