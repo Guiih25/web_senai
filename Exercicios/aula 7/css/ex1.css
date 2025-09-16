@@ -1,0 +1,37 @@
+body {
+    background-color: lightblue;
+    font-size: 36px;
+}
+
+.verde {
+    background-color: green;
+    height: 100px;
+
+}
+
+p {
+    text-align: center;
+    font-size: 15px;
+}
+
+.blue {
+    
+
+    background-color: blue;
+    height: 200px;
+    width: 49%;
+    display: inline-block;
+}
+
+.amarelo {
+
+
+    display: inline-block;
+    background-color: yellow;
+    height: 200px;
+    width: 50%;
+}
+.verde {
+    background-color: green;
+    height: 100px;
+}

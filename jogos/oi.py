@@ -4,7 +4,6 @@ print("Vamos jogar um jogo!😍😍")
 nome = input("Para começar digite seu nome: ")
 print("Olá", nome, 'vamos começar!')
 
-
 while True:
     pergunta = input("Faça uma pergunta: ")
     num = random.randint(1, 10)
@@ -14,6 +13,7 @@ while True:
         if continuar == "s":
             continue
         else:
+            print("Fim do jogo")
             break
     elif num == 2:
         print("Sim")
@@ -21,6 +21,7 @@ while True:
         if continuar == "s":
             continue
         else:
+            print("Fim do jogo")
             break
     elif num == 3:
         print("Talvez")
@@ -28,6 +29,7 @@ while True:
         if continuar == "s":
             continue
         else:
+            print("Fim do jogo")
             break
     elif num == 4:
         print("Nem pensar")
@@ -35,6 +37,7 @@ while True:
         if continuar == "s":
             continue
         else:
+            print("Fim do jogo")
             break
     elif num == 5:
         print("Pergunte para seu amigo")
@@ -42,6 +45,7 @@ while True:
         if continuar == "s":
             continue
         else:
+            print("Fim do jogo")
             break
     elif num == 6:
         print("COM CERTEZA")
@@ -49,6 +53,7 @@ while True:
         if continuar == "s":
             continue
         else:
+            print("Fim do jogo")
             break
     elif num == 7:
         print("olha essa ta difici...não sei te dizer.")
@@ -56,6 +61,7 @@ while True:
         if continuar == "s":
             continue
         else:
+            print("Fim do jogo")
             break
     elif num == 8:
         print("Vai sim, basta bater na bunda do seu amigo")
@@ -63,6 +69,7 @@ while True:
         if continuar == "s":
             continue
         else:
+            print("Fim do jogo")
             break
     elif num == 9:
         print("vixxxxx")
@@ -70,6 +77,7 @@ while True:
         if continuar == "s":
             continue
         else:
+            print("Fim do jogo")
             break
     else:
         print("Olha gosto nem te dizer...")
@@ -77,4 +85,5 @@ while True:
         if continuar == "s":
             continue
         else:
+            print("Fim do jogo")
             break

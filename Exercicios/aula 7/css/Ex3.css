@@ -1,0 +1,56 @@
+body {
+    background-color: lightblue;
+    font-size: 36px;
+}
+
+.verde {
+    text-align: center;
+    height: 250px;
+    background-color: green;
+    width: 240px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.azul {
+    text-align: center;
+    height: 250px;
+    background-color: blue;
+    width: 240px;
+    border-radius: 130px;
+    display: inline-block;
+    margin-right: 10px;
+
+}
+.amarelo{
+     text-align: center;
+    height: 250px;
+    background-color: yellow;
+    width: 240px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+body{
+    text-align: center;
+}
+.verdzao {
+     text-align: center;
+    height: 200px;
+    background-color: green;
+    width: 50%;
+    border-radius: 40px;
+    display: inline-block;
+    margin-right: 10px;
+}
+div {
+    font-size: 20px;
+    padding: 10px;
+}
+div:hover {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+}

@@ -1,0 +1,20 @@
+p {
+    background-color: bisque;
+    color: #181818;
+    font-family: "Ink Free";
+
+    text-align: center;
+}
+
+strong {
+    text-align: center;
+    overflow: hidden;
+
+    color: red;
+}
+.imagem {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
