@@ -1,0 +1,35 @@
+body {
+    margin: 25px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.Vermelho {
+    display: flex;
+    background-color: red;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.azul {
+    display: flex;
+    background-color: #3b82f6;
+    height: 300px;
+    margin-bottom: 25px;
+}
+
+.section {
+    display: flex;
+
+
+
+}
+
+.section div {
+    display: flex;
+    background-color: #7aa2ff;
+    height: 250px;
+    flex: auto;
+    margin-left: 20px;
+}
