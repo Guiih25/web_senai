@@ -1,5 +1,5 @@
 body {
-    margin: 25px;
+    margin: 0px;
     padding: 0;
     box-sizing: border-box;
 }
@@ -21,7 +21,7 @@ body {
 
 .section {
     display: flex;
-
+    gap: 20px;
 
 
 }
@@ -31,5 +31,5 @@ body {
     background-color: #7aa2ff;
     height: 250px;
     flex: auto;
-    margin-left: 20px;
+
 }
