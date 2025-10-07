@@ -2,7 +2,9 @@ body {
     margin: 0px;
     padding: 0;
     box-sizing: border-box;
+
 }
+
 .Vermelho {
     display: flex;
     background-color: red;
@@ -54,6 +56,7 @@ body {
 
 .section {
     display: flex;
+    gap: 20px;
 }
 
 .section div {
@@ -61,20 +64,35 @@ body {
     background-color: #7aa2ff;
     height: 250px;
     flex: auto;
-    margin-left: 20px;
+
     flex-direction: column;
     align-content: center;
     align-items: center;
     padding: 10px;
 }
-img{
+
+.section div:hover {
+    display: flex;
+    background-color: #487cff;
+    height: 250px;
+    flex: auto;
+
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+img {
     margin-bottom: 12px;
 }
-.titulo{
+
+.titulo {
     color: #31047a;
     text-align: center;
 }
-.legenda{
+
+.legenda {
     text-align: center;
     display: flex;
     align-items: start;
