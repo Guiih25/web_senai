@@ -1,0 +1,17 @@
+table, td, th{
+    border: 2px solid #165700;
+    border-collapse: collapse;
+    font-family: Arial;
+    padding: 5px;
+}
+
+thead{
+    background-color: #009200;
+}
+tbody{
+    background-color: rgba(52,232,0,0.36);
+
+}
+td:hover{
+    background-color: rgba(52, 232, 0, 0.15);
+}
